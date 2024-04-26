@@ -10,7 +10,7 @@ JPSPlanner<Dim>::JPSPlanner(bool verbose): planner_verbose_(verbose) {
 
 template<int Dim>
 void JPSPlanner<Dim>::setParam(ros::NodeHandle& nh){
-  nh.param("world_frame_id",world_frame_id,std::string("world_enu"));
+  nh.param("world_frame_id",world_frame_id,std::string("world"));
   /*visualization*/
   rawpath_jps_pub_ = nh.advertise<nav_msgs::Path>("/rawpath_jps_vis",1);
   optipath_jps_pub_ = nh.advertise<nav_msgs::Path>("/optipath_jps_vis",1);
@@ -21,16 +21,16 @@ void JPSPlanner<Dim>::setParam(ros::NodeHandle& nh){
 
 template<int Dim>
 void JPSPlanner<Dim>::map_update_timer_cb(const ros::TimerEvent& event){
-  if(has_map){
-    return;}
-  if(!map_util_set) {
-    return;}
-  if(!map_util_->has_map_()) {
-    return;}
+  if(has_map)
+    return;
+  if(!map_util_set)
+    return;
+  if(!map_util_->has_map_())
+    return;
   updateMap();
   has_map = true;
   
-  ROS_WARN("JPS Planner map has been updated");
+  ROS_WARN("[JPS]Map has been updated");
 }
 template <int Dim>
 void JPSPlanner<Dim>::setMapUtil(const std::shared_ptr<JPS::MapUtil<Dim>> &map_util) {
