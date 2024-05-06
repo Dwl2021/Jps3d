@@ -14,7 +14,7 @@
 #include <ros/console.h>
 #include <ros/ros.h>
 #include <octomap_msgs/Octomap.h>
-#include <octomap_msgs/GetOctomap.h>
+#include <octomap_msgs/GetOctomap.h
 #include <octomap_msgs/BoundingBoxQuery.h>
 #include <octomap_msgs/conversions.h>
 #include <octomap_ros/conversions.h>
@@ -112,19 +112,11 @@ namespace JPS
     }
     void setObs(Eigen::Vector3d pt)
     {
-      int expand_size = 0;
-      // 3
+      int expand_size = 0;  // inflate size
       double coord_x = pt[0];
       double coord_y = pt[1];
       double coord_z = pt[2];
-      /*
-            bool isOccupied(const Veci<Dim> &pn) {
-      if (isOutside(pn))
-        return false;
-      else
-        return isOccupied(getIndex(pn));
-    }
-      */
+
       Veci<Dim> index3i = floatToInt(Vecf<Dim>(coord_x, coord_y, coord_z));
       if (isOutside(index3i))
         return;
@@ -164,7 +156,6 @@ namespace JPS
       {
         for (int y = min_esdf[1]; y <= max_esdf[1]; y++)
         {
-          // ROS_INFO("1111111111111111111111111111");
           fillESDF(
               [&](int z)
               {
@@ -175,7 +166,6 @@ namespace JPS
               min_esdf[2],
               max_esdf[2], 2);
         }
-        // ROS_INFO("22222222222222222222222");
       }
 
       for (int x = min_esdf[0]; x <= max_esdf[0]; x++)
@@ -206,20 +196,6 @@ namespace JPS
       }
 
       /* ========== compute negative distance ========== */
-      /*for (int x = min_esdf(0); x <= max_esdf(0); ++x)
-        for (int y = min_esdf(1); y <= max_esdf(1); ++y)
-          for (int z = min_esdf(2); z <= max_esdf(2); ++z) {
-
-            int idx = toAddress(x, y, z);
-            if (occupancy_buffer_inflate_[idx] == 0) {
-              occupancy_buffer_neg[idx] = 1;
-
-            } else if (occupancy_buffer_inflate_[idx] == 1) {
-              occupancy_buffer_neg[idx] = 0;
-            } else {
-              ROS_ERROR("what?");
-            }
-          }*/
 
       ros::Time t1, t2;
 
@@ -286,7 +262,7 @@ namespace JPS
       v[start] = start;
       z[start] = -std::numeric_limits<double>::max();
       z[start + 1] = std::numeric_limits<double>::max();
-      // ROS_INFO("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+
       for (int q = start + 1; q <= end; q++)
       {
         k++;
@@ -304,7 +280,6 @@ namespace JPS
         z[k] = s;
         z[k + 1] = std::numeric_limits<double>::max();
       }
-      // ROS_INFO("bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb");
       k = start;
 
       for (int q = start; q <= end; q++)
