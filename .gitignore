@@ -3,4 +3,5 @@ build/
 logs/
 .catkin_tools/
 .vscode/
+/src/CMakeLists.txt
 .DS_Store
