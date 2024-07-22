@@ -1,5 +1,5 @@
 #include <geometry_msgs/PoseStamped.h>
-#include <jps_planner/jps_planner/jps_planner.h>
+#include <jps_planner/jps_planner.h>
 
 template <int Dim>
 JPSPlanner<Dim>::JPSPlanner(bool verbose) : planner_verbose_(verbose)

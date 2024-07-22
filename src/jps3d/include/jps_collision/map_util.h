@@ -5,23 +5,22 @@
 #ifndef JPS_MAP_UTIL_H
 #define JPS_MAP_UTIL_H
 
+#include <data_type/data_type.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <jps_basis/data_type.h>
+#include <nav_msgs/Path.h>
+#include <octomap/OcTreeKey.h>
+#include <octomap/octomap.h>
+#include <octomap_msgs/BoundingBoxQuery.h>
+#include <octomap_msgs/GetOctomap.h>
 #include <octomap_msgs/Octomap.h>
+#include <octomap_msgs/conversions.h>
+#include <octomap_ros/conversions.h>
+#include <octomap_server/OctomapServer.h>
 #include <ros/console.h>
 #include <ros/ros.h>
 
 #include <Eigen/Eigen>
 #include <iostream>
-#include <octomap_msgs/GetOctomap.h>
-#include <nav_msgs/Path.h>
-#include <octomap/OcTreeKey.h>
-#include <octomap/octomap.h>
-#include <octomap_msgs/BoundingBoxQuery.h>
-#include <octomap_msgs/conversions.h>
-#include <octomap_ros/conversions.h>
-#include <octomap_server/OctomapServer.h>
-
 #include <map>
 using namespace Eigen;
 

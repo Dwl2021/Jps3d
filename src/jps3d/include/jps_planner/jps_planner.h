@@ -5,10 +5,10 @@
 #ifndef JPS_PLANNER_BASE_H
 #define JPS_PLANNER_BASE_H
 
+#include <data_type/data_type.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <jps_basis/data_type.h>
 #include <jps_collision/map_util.h>
-#include <jps_planner/jps_planner/graph_search.h>
+#include <jps_planner/graph_search.h>
 #include <nav_msgs/Path.h>
 #include <octomap/OcTreeKey.h>
 #include <octomap/octomap.h>

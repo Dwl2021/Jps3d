@@ -38,10 +38,8 @@ include_directories(
 
 
 add_library( jps3d 
-    src/jps_planner/graph_search.cpp
-    src/jps_planner/jps_planner.cpp
-    src/distance_map_planner/graph_search.cpp
-    src/distance_map_planner/distance_map_planner.cpp 
+    src/graph_search.cpp
+    src/jps_planner.cpp
     )
 target_link_libraries( jps3d
     ${catkin_LIBRARIES} 
