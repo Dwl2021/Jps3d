@@ -57,12 +57,11 @@ class MapUtil
     nh.param("/map/x_size", map_size(0), 100.0);
     nh.param("/map/y_size", map_size(1), 100.0);
     nh.param("/map/z_size", map_size(2), 2.0);
+    nh.param("/map/origin_x", origin_d_(0), -50.0);
+    nh.param("/map/origin_y", origin_d_(1), -50.0);
+    nh.param("/map/origin_z", origin_d_(2), 0.0);
     nh.param("/world_frame_id", world_frame_id, std::string("world"));
 
-    origin_d_[0] = -map_size(0) / 2;
-    origin_d_[1] = -map_size(1) / 2;
-    ;
-    origin_d_[2] = 0;
     dim_(0) = map_size(0) / res_;
     dim_(1) = map_size(1) / res_;
     dim_(2) = map_size(2) / res_;

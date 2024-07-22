@@ -7,8 +7,8 @@
 
 #include <data_type/data_type.h>
 #include <geometry_msgs/PoseStamped.h>
-#include <jps_collision/map_util.h>
 #include <jps_planner/graph_search.h>
+#include <map_util/map_util.h>
 #include <nav_msgs/Path.h>
 #include <octomap/OcTreeKey.h>
 #include <octomap/octomap.h>
@@ -93,6 +93,9 @@ class JPSPlanner
   void publish_keygrid();
   void publish_samplepath();
   void publishAll();
+
+  // convert from vec_Vec3f to std::vector<Eigen::Vector3d>
+  static bool convert_path(const vec_Vec3f &path, std::vector<Eigen::Vector3d> &result);
 
  protected:
   /// Assume using 3D voxel map for all 2d and 3d planning

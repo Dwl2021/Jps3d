@@ -477,6 +477,19 @@ bool JPSPlanner<Dim>::plan(const Vecf<Dim> &start, const Vecf<Dim> &goal, decima
   return true;
 }
 
+template <int Dim>
+bool JPSPlanner<Dim>::convert_path(const vec_Vec3f &path,
+                                   std::vector<Eigen::Vector3d> &result)
+{
+  result.clear();
+  result.reserve(path.size());
+  for (const auto &vec : path)
+  {
+    result.push_back(vec);
+  }
+  return true;
+}
+
 template class JPSPlanner<2>;
 
 template class JPSPlanner<3>;

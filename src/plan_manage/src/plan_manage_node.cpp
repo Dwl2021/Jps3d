@@ -9,7 +9,10 @@ int main(int argc, char** argv)
   ros::init(argc, argv, "jps3d");
   ros::NodeHandle nh, nh_priv("~");
 
+  /* The result path can be obtain in two type */
   vec_Vec3f path;
+  std::vector<Eigen::Vector3d> path_optional;
+
   Visualizer visualizer(nh);
   bool plan_once = false;
   bool success = false;
@@ -31,8 +34,7 @@ int main(int argc, char** argv)
   jps3d.setParam(nh);
   jps3d.setMapUtil(map_util);
 
-  ros::Duration(1.0).sleep();
-  ros::Rate rate(10);
+  ros::Rate rate(1);
   while (ros::ok())
   {
     /* visual start and goal points */
@@ -47,9 +49,14 @@ int main(int argc, char** argv)
       /* visual path */
       if (success)
       {
-        plan_once = true;
+        /* vec_Vec3f */
         path = jps3d.getSamplePath();
+        /* [optional] convert from vec_Vec3f to vector<Eigen::Vector3d> */
+        jps3d.convert_path(path, path_optional);
+
+        /* visualize */
         visualizer.visualizePath(path);
+        plan_once = true;
       }
     }
     rate.sleep();
