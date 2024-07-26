@@ -1,4 +1,5 @@
 <launch>
+  <arg name="resolution" default="0.1"/>
   <!-- map -->
   <param name="map/x_size" value="100" />
   <param name="map/y_size" value="100" />
@@ -6,12 +7,12 @@
   <param name="map/origin_x" value="-50" />
   <param name="map/origin_y" value="-50" />
   <param name="map/origin_z" value="0" />
-  <param name="map/resolution" value="0.2" />
+  <param name="map/resolution" value="$(arg resolution)" />
   <param name="map/world_frame_id" value="world" />
 
   <!-- jps -->
   <param name="world_frame_id" value="world" type="string" />
-  <param name="jps/resolution" value="0.1" type="double" />
+  <param name="jps/resolution" value="$(arg resolution)" type="double" />
   <param name="jps/lambda_heu" value="1.0" type="double" />
   <param name="jps/allocate_num" value="500000" type="double" />
 </launch>
