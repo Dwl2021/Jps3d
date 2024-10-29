@@ -22,9 +22,12 @@ sudo apt install ros-$ROS_DISTRO-pcl-ros
 **Step 2**: Initialize the repository and compile:
 
 ```shell
-git clone https://github.com/Dwl2021/Dynamic-Astar.git
-cd Dynamic-Astar
-catkin_make
+cd your_workspace
+git submodule add -b submodule https://github.com/Dwl2021/Jps3d.git src/jps3d
+git submodule update --init --recursive
+git add .gitmodules src/jps3d
+git commit -m "Added Jps3d as a submodule in src/jps3d tracking main branch"
+catkin build
 ```
 
 **Step 3**: Run the main program:

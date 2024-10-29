@@ -2,8 +2,8 @@
  * @file map_util.h
  * @brief MapUtil classes
  */
-#ifndef MAP_UTIL_H
-#define MAP_UTIL_H
+#ifndef JPS3D_MAP_UTIL_H
+#define JPS3D_MAP_UTIL_H
 
 #include <data_type/data_type.h>
 #include <geometry_msgs/PoseStamped.h>

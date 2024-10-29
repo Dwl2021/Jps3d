@@ -1,5 +1,5 @@
+#include <jps3d_test/visualization.h>
 #include <jps_planner/jps_planner.h>
-#include <plan_manage/visualization.h>
 #include <ros/ros.h>
 
 #include <Eigen/Core>
@@ -58,6 +58,10 @@ int main(int argc, char** argv)
         visualizer.visualizePath(path);
         plan_once = true;
       }
+    }
+    if (success)
+    {
+      visualizer.visualizePath(path);
     }
     rate.sleep();
     ros::spinOnce();

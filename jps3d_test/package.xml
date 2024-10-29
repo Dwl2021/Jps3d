@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package format="2">
-  <name>plan_manage</name>
+  <name>jps3d_test</name>
   <version>0.0.0</version>
-  <description>The plan_manage package</description>
+  <description>The jps3d_test package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag -->
   <!-- Example:  -->

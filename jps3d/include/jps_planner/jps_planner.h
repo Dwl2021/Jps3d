@@ -8,7 +8,7 @@
 #include <data_type/data_type.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <jps_planner/graph_search.h>
-#include <map_util/map_util.h>
+#include <map_util/jps3d_map_util.h>
 #include <nav_msgs/Path.h>
 #include <octomap/OcTreeKey.h>
 #include <octomap/octomap.h>
