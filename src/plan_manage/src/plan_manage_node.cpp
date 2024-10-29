@@ -59,6 +59,10 @@ int main(int argc, char** argv)
         plan_once = true;
       }
     }
+    if (success)
+    {
+      visualizer.visualizePath(path_optional);
+    }
     rate.sleep();
     ros::spinOnce();
   }

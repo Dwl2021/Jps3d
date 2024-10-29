@@ -22,8 +22,8 @@ sudo apt install ros-$ROS_DISTRO-pcl-ros
 **Step 2**: Initialize the repository and compile:
 
 ```shell
-git clone https://github.com/Dwl2021/Dynamic-Astar.git
-cd Dynamic-Astar
+git clone https://github.com/Dwl2021/Jps3d.git
+cd Jps3d
 catkin_make
 ```
 
